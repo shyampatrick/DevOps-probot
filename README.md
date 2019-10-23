@@ -23,3 +23,7 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 ## License
 
 [ISC](LICENSE) © 2018 Edward Raigosa <wenlock@github.com>
+
+## Test
+
+Test branch addition
