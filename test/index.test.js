@@ -26,24 +26,24 @@ describe('My Probot app', () => {
     // Passes the mocked out GitHub API into out app instance
     app.auth = () => Promise.resolve(github);
   });
-});
 
-test('creates a comment when an issue is opened', async () => {
-  // Simulates delivery of an issues.opened webhook
-  await app.receive({
-    event: 'issues.opened',
-    payload: issuesOpenedPayload
+  test('creates a comment when an issue is opened', async () => {
+    // Simulates delivery of an issues.opened webhook
+    await app.receive({
+      event: 'issues.opened',
+      payload: issuesOpenedPayload
+    });
+
+    // This test passes if the code in your index.js file calls `context.github.issues.createComment`
+    expect(github.issues.createComment).toHaveBeenCalled();
   });
 
-  // This test passes if the code in your index.js file calls `context.github.issues.createComment`
-  expect(github.issues.createComment).toHaveBeenCalled();
-});
-
-test('process check_run completed event', async () => {
-  // Simulates delivery of an issues.opened webhook
-  await app.receive({
-    name: 'check_run.completed',
-    payload: checkRunCompletedPayload
+  test('process check_run completed event', async () => {
+    // Simulates delivery of an issues.opened webhook
+    await app.receive({
+      name: 'check_run.completed',
+      payload: checkRunCompletedPayload
+    });
   });
 });
 
