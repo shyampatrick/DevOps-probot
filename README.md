@@ -27,3 +27,4 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 ## Test
 
 Test branch addition
+More additions
